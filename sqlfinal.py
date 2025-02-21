@@ -93,7 +93,7 @@ def get_products():
 @admin_required
 def update_product(current_user, product_id):
     data = request.json
-    mongo.db.products.update_one({"_id": product_id}, {"$set": data})
+    mongo.db.products.update_one({"id_": product_id}, {"$set": data})
     return jsonify({"message": "Product updated!"})
 
 # Route: Delete Product (Admin Only)
