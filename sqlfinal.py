@@ -101,7 +101,7 @@ def update_product(current_user, product_id):
 @token_required
 @admin_required
 def delete_product(current_user, product_id):
-    mongo.db.products.delete_one({"_id": product_id})
+    mongo.db.products.delete_one({"id_": product_id})
     return jsonify({"message": "Product deleted!"})
 
 # Route: Place an Order (User Only)
