@@ -51,6 +51,43 @@ SECRET_KEY=your_secret_key
 
 ---
 
+
+```json
+{
+  "_id": "ObjectId",
+  "username": "string",
+  "password": "hashed string",
+  "role": "user/admin"
+}
+```
+
+### `products` Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "name": "string",
+  "price": "float",
+  "description": "string",
+  "link": "string"
+}
+```
+
+### `orders` Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "user_id": "ObjectId",
+  "products": [
+    { "product_id": "ObjectId", "quantity": "int" }
+  ],
+  "total_price": "float",
+  "status": "pending/shipped/delivered"
+}
+```
+
+
 ## API Endpoints
 
 ### **Authentication**
